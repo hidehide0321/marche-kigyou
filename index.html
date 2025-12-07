@@ -68,6 +68,14 @@
     @media (max-width: 900px){
       #about-face .side-figure img{ max-width:100%; }
     }
+    /* SP時：#about-face を タイトル→サブタイトル→写真→説明文 の順に並べ替え */
+    @media (max-width: 900px){
+      #about-face .card.with-side{ display:flex; flex-direction:column; }
+      #about-face .card.with-side > h2{ order:1; }
+      #about-face .card.with-side > p:first-of-type{ order:2; }
+      #about-face .card.with-side > img.side-img{ order:3; width:100%; height:auto; }
+      #about-face .card.with-side > p:not(:first-of-type){ order:4; }
+    }
     /* About face: image inside card (right aligned) */
     #about-face .side-img{ float:right; max-width:min(320px,45%); height:auto; margin-left:12px; margin-bottom:8px; display:block; }
     @media (max-width: 900px){
